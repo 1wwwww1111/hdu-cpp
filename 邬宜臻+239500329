@@ -1,0 +1,82 @@
+第一题
+include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, choice;
+
+    cout << "请输入第一个整数: ";
+    cin >> num1;
+    cout << "请输入第二个整数: ";
+    cin >> num2;
+
+    cout << "请选择操作: " << endl;
+    cout << "1. 加法" << endl;
+    cout << "2. 减法" << endl;
+    cout << "请输入你的选择 (1 或 2): ";
+    cin >> choice;
+
+    if (choice == 1) {
+        cout << "结果: " << num1 << " + " << num2 << " = " << num1 + num2 << endl;
+    } else if (choice == 2) {
+        cout << "结果: " << num1 << " - " << num2 << " = " << num1 - num2 << endl;
+    } else {
+        cout << "无效的选择，请输入 1 或 2。" << endl;
+    }
+
+    return 0;
+}
+
+第二题
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+
+    cout << "请输入一个整数: ";
+    cin >> number;
+
+    if (number % 2 == 0) {
+        cout << number << " 是偶数。" << endl;
+    } else {
+        cout << number << " 是奇数。" << endl;
+    }
+
+    return 0;
+}
+
+第三题
+#include <iostream>
+#include <cstdlib> 
+#include <ctime>    
+using namespace std;
+
+int main() {
+    srand(time(0));
+
+    int secretNumber = rand() % 10 + 1;
+    int guess;
+    int attempts = 0;
+
+    cout << "我想了一个1到10之间的数字，请猜一猜：" << endl;
+
+    while (true) {
+        cout << "你的猜测: ";
+        cin >> guess;
+        attempts++;
+
+       
+        if (guess < secretNumber) {
+            cout << "猜小了" << endl;
+        } else if (guess > secretNumber) {
+            cout << "猜大了" << endl;
+        } else {
+            cout << "猜对了" << endl;
+            cout << "你一共猜了 " << attempts << " 次。" << endl;
+            break;  
+        }
+    }
+
+    return 0;
+}
